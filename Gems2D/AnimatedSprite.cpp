@@ -107,24 +107,3 @@ void AnimatedSprite::draw(sf::RenderWindow& App) {
 	m_size_x = paint_area[3];
 	m_size_y = paint_area[4];
 }
-
-
-void AnimatedSprite::jump(){
-	force_y += 79;
-}
-
-void AnimatedSprite::move_left(){
-	force_x -= 20;
-}
-
-void AnimatedSprite::move_right(){
-	force_x += 20;
-}
-
-void AnimatedSprite::move_duck_left(){
-	force_x -= 10;
-}
-
-void AnimatedSprite::move_duck_right(){
-	force_x += 10;
-}
