@@ -106,8 +106,6 @@ void AnimatedSprite::draw(sf::RenderWindow& App) {
 	m_animationSheets[paint_area[0]-1].draw(App);
 	m_size_x = paint_area[3];
 	m_size_y = paint_area[4];
-	m_animations[0].addStep;
-
 }
 
 
