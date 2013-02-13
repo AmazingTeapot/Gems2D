@@ -27,6 +27,10 @@ void GameManager::start() {
 	m_actualLevel = 0;
 }
 
+void GameManager::throwEvent(int i) {
+
+}
+
 void GameManager::run(sf::RenderWindow& App) {
 	
 	while (App.isOpen()) {
@@ -41,6 +45,8 @@ void GameManager::run(sf::RenderWindow& App) {
 
 			// Keyboard Events. Here we have to include a catcher for every key we want to use in the game
 			
+			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) this.throw(1);
+
 			if (Evento.key.code == sf::Keyboard::Right || Evento.key.code == sf::Keyboard::D) m_levels[m_actualLevel].eventHandler(0);
 				else if (Evento.key.code == sf::Keyboard::Left || Evento.key.code == sf::Keyboard::A) m_levels[m_actualLevel].eventHandler(1);
 				else if (Evento.key.code == sf::Keyboard::Down || Evento.key.code == sf::Keyboard::S) m_levels[m_actualLevel].eventHandler(2);
@@ -59,7 +65,6 @@ void GameManager::run(sf::RenderWindow& App) {
 				else if(Evento.key.code == sf::Keyboard::Escape) m_levels[m_actualLevel].eventHandler(15);
 				else if(Evento.key.code == sf::Keyboard::Down && Evento.key.code == sf::Keyboard:: Right) m_levels[m_actualLevel].eventHandler(16);
 				else if(Evento.key.code == sf::Keyboard::Down && Evento.key.code == sf::Keyboard:: Left) m_levels[m_actualLevel].eventHandler(17);
-				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left));
 				if(sf::Joystick::isButtonPressed(0,0))m_levels[m_actualLevel].eventHandler(555);
 				if(sf::Joystick::isButtonPressed(0,1))m_levels[m_actualLevel].eventHandler(556);
 				if(sf::Joystick::isButtonPressed(0,3))m_levels[m_actualLevel].eventHandler(557);
