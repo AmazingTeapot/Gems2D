@@ -3,9 +3,6 @@
 #include <fstream>
 #include <iostream>
 
-const int WINDOW_SIZE_X = 800;
-const int WINDOW_SIZE_Y = 600;
-
 GameManager::GameManager() { }
 
 
@@ -42,9 +39,9 @@ void GameManager::run(sf::RenderWindow& App) {
 			   App.close();
 			}
 
-			// Keyboard Events
-			if (Evento.type == sf::Event::KeyPressed) {				
-				if (Evento.key.code == sf::Keyboard::Right || Evento.key.code == sf::Keyboard::D) m_levels[m_actualLevel].eventHandler(0);
+			// Keyboard Events. Here we have to include a catcher for every key we want to use in the game
+			
+			if (Evento.key.code == sf::Keyboard::Right || Evento.key.code == sf::Keyboard::D) m_levels[m_actualLevel].eventHandler(0);
 				else if (Evento.key.code == sf::Keyboard::Left || Evento.key.code == sf::Keyboard::A) m_levels[m_actualLevel].eventHandler(1);
 				else if (Evento.key.code == sf::Keyboard::Down || Evento.key.code == sf::Keyboard::S) m_levels[m_actualLevel].eventHandler(2);
 				else if (Evento.key.code == sf::Keyboard::Up || Evento.key.code == sf::Keyboard::Space || Evento.key.code == sf::Keyboard::W) m_levels[m_actualLevel].eventHandler(3);
@@ -72,10 +69,9 @@ void GameManager::run(sf::RenderWindow& App) {
 				if(sf::Joystick::getAxisPosition(0,sf::Joystick::Y) < 10) m_levels[m_actualLevel].eventHandler(561);
 				if(sf::Joystick::getAxisPosition(0,sf::Joystick::X) > 10) m_levels[m_actualLevel].eventHandler(562);
 				if(sf::Joystick::getAxisPosition(0,sf::Joystick::X) < 10) m_levels[m_actualLevel].eventHandler(563);
-				//pasar de trampa (tabulador).
 				if(sf::Joystick::getAxisPosition(0,sf::Joystick::PovX) > 10) m_levels[m_actualLevel].eventHandler(564);
 				
-			}
+			
 		}
 	/* Get Level Status*/
 

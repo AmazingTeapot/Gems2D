@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Image.h"
+#include "Constants.h"
 
 using namespace std;
 

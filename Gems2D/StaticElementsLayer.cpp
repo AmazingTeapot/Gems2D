@@ -10,9 +10,6 @@
 
 using namespace std;
 
-const string LEVEL_PATH = "./Resources/Levels/";
-const string LEVEL_EXTENSION = ".txt";
-
 StaticElementsLayer::StaticElementsLayer() { 
 	m_elements = 0;
 	m_level_folder = "";

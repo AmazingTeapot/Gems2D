@@ -9,9 +9,6 @@
 
 using namespace std;
 
-const string LEVEL_PATH = "./Resources/Levels/";
-const string LEVEL_EXTENSION = ".txt";
-
 AnimatedElementsLayer::AnimatedElementsLayer() { 
 	m_elements = 0;
 	m_level_folder = "";

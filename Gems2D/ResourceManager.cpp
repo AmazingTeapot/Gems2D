@@ -6,18 +6,6 @@
 #include "Resource.h"
 #include "Image.h"
 
-const string IMAGE_PATH = "./Resources/Graphics/";
-const string IMAGE_EXTENSION = ".png";
-
-const string MUSIC_PATH = "./Resources/Audio/Music/";
-const string MUSIC_EXTENSION = ".ogg";
-
-const string SFX_PATH = "./Resources/Audio/SFX/";
-const string SFX_EXTENSION = ".ogg";
-
-const string FONT_PATH = "./Resources/Fonts/";
-const string FONT_EXTENSION = ".ttf";
-
 ResourceManager::ResourceManager () {
 	m_resource_quantity = 0;
 }

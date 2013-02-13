@@ -3,9 +3,6 @@
 #include <fstream>
 #include "ResourceManager.h"
 
-const string LEVEL_PATH = "./Resources/Levels/";
-const string LEVEL_EXTENSION = ".txt";
-
 using namespace std;
 
 StaticGridLayer::StaticGridLayer() {

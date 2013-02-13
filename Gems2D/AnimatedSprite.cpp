@@ -4,9 +4,6 @@
 #include "ResourceManager.h"
 #include "Camera.h"
 
-const string ANIMATION_PATH = "./Resources/Graphics/AnimatedSprites/";
-const string LEVEL_EXTENSION = ".txt";
-
 AnimatedSprite::AnimatedSprite() { 
 	m_actualAnimation = 0;
 	m_numberOfSheets = 1;

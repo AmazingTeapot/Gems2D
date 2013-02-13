@@ -7,13 +7,6 @@
 
 using namespace std;
 
-const string LEVEL_CONFIGS = "./Resources/Levels/Config/";
-const string LEVEL_RESOURCES = "./Resources/Levels/";
-const string LEVEL_EXTENSION = ".txt";
-
-const int WINDOW_SIZE_X = 800;
-const int WINDOW_SIZE_Y = 600;
-
 Level::Level() {
 	m_size_x = 0;
 	m_size_y = 0;
