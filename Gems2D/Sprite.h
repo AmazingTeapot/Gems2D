@@ -34,7 +34,7 @@ public:
 
     ~Sprite();
 
-    /* Sets the position of the sprite */
+    /* Sets the position of the sprite (and the anchor point offset applied to the sprite) */
 
     void setPos(float xpos, float ypos);
 
@@ -61,14 +61,22 @@ public:
 	/* Changes the focus position of the tileset onto "pos" */
 
 	void setFocus(int pos);
+	 
+	/* Changes the anchor point of the tileset onto (x, y), where x and y are coordinates relatives to the sprite */
 
-    /* Returns the position of the sprite */
+	void setAnchorPoint(float x, float y);
+
+    /* Returns the position of the sprite plus the offset of the anchor point */
 
     pair<float, float> getPos();
 
     /* Returns the size of the sprite */
 	
     pair<int, int> getSize();
+
+    /* Returns the anchor point of the sprite */
+	
+    pair<float, float> getAnchorPoint();
 
     /* Moves the sprite position "i" pixels on the x axis and "j" pixels on the y axis */
 
@@ -93,6 +101,8 @@ protected:
     int m_position;
 	int m_imageSize_x;
 	int m_imageSize_y;
+	int m_anchor_x;
+	int m_anchor_y;
     sf::Sprite m_Sprite;
     Image* m_Image;
 };

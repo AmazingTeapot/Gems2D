@@ -41,5 +41,5 @@ public:
 	   subsequent child classes. The resource is loaded from the path "m_path". If the resource is correctly
 	   loaded it returns true. Otherwise it returns false. */
 
-	bool load();
+	virtual bool load() = 0;
 };

@@ -10,6 +10,8 @@ Sprite::Sprite () {
     m_yelements = 0;
 	m_imageSize_x = 0;
 	m_imageSize_y = 0;
+	m_anchor_x = 0;
+	m_anchor_y = 0;
 }
 
 Sprite::Sprite (Image* image) {
@@ -23,6 +25,8 @@ Sprite::Sprite (Image* image) {
 	m_imageSize_y = m_ysize;
 	m_xelements = 0;
     m_yelements = 0;
+	m_anchor_x = 0;
+	m_anchor_y = 0;
 }
 
 Sprite::Sprite(float xpos, float ypos, Image* image) {
@@ -37,6 +41,8 @@ Sprite::Sprite(float xpos, float ypos, Image* image) {
 	m_xelements = 0;
     m_yelements = 0;
     m_Sprite.setPosition(m_xpos, m_ypos);
+	m_anchor_x = 0;
+	m_anchor_y = 0;
 }
 
 Sprite::Sprite(float xpos, float ypos, int xsize, int ysize, Image* imagen) {
@@ -60,8 +66,8 @@ Sprite::Sprite(float xpos, float ypos, int xsize, int ysize, Image* imagen) {
 
 void Sprite::setPos(float xpos, float ypos) {
     m_Sprite.setPosition(xpos, ypos);
-    m_xpos = xpos;
-    m_ypos = ypos;
+    m_xpos = xpos - m_xsize*m_anchor_x;
+    m_ypos = ypos - m_ysize*m_anchor_y;
 }
 
 void Sprite::setSize(int xsize, int ysize) {
@@ -105,12 +111,15 @@ void Sprite::setSprite(sf::Sprite sprite) {
 	m_Sprite = sprite;
 }
 
-/* Returns the position of the sprite */
+void Sprite::setAnchorPoint(float x, float y) {
+	m_anchor_x = x;
+	m_anchor_y = y;
+}
 
 pair<float, float> Sprite::getPos() {
     pair<float, float> pos;
-    pos.first = m_xpos;
-    pos.second = m_ypos;
+    pos.first = m_xpos + m_xsize*m_anchor_x;
+    pos.second = m_ypos + m_ysize*m_anchor_y;
     return pos;
 }
 
@@ -119,6 +128,13 @@ pair<int, int> Sprite::getSize() {
     size.first = m_xsize;
     size.second = m_ysize;
     return size;
+}
+
+pair<float, float> Sprite::getAnchorPoint() {
+    pair<float, float> anchor;
+    anchor.first = m_anchor_x;
+    anchor.second = m_anchor_y;
+    return anchor;
 }
 
 void Sprite::move(float i, float j) {

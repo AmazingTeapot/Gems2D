@@ -18,7 +18,6 @@ const string SFX_EXTENSION = ".ogg";
 const string FONT_PATH = "./Resources/Fonts/";
 const string FONT_EXTENSION = ".ttf";
 
-using namespace std;
 ResourceManager::ResourceManager () {
 	m_resource_quantity = 0;
 }

@@ -40,13 +40,12 @@ pair<int, int> Camera::getObsPoint() {
 	return p;
 }
 
-void Camera::getDrawableArea(vector<int>& v) {
-	vector<int> drawable (4, 0);
+void Camera::getDrawableArea(vector<int>& drawable) {
+	drawable = *new vector<int>(4, 0);
 	drawable[0] = m_obs_x - m_window_width/2;
 	drawable[1] = m_obs_y - m_window_height/2;
 	drawable[2] = m_obs_x + m_window_width/2;
 	drawable[3] = m_obs_y + m_window_height/2;
-	v = drawable;
 }
 
 void Camera::updateCameraPos (int player_x, int player_y) {

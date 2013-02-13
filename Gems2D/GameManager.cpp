@@ -3,25 +3,24 @@
 #include <fstream>
 #include <iostream>
 
-GameManager::GameManager() {
+const int WINDOW_SIZE_X = 800;
+const int WINDOW_SIZE_Y = 600;
 
-}
+GameManager::GameManager() { }
 
 
-GameManager::~GameManager(void)
-{
-}
+GameManager::~GameManager(void) { }
 
 void GameManager::start() {
-	Camera::getInstance()->setWindowSize(800, 600);
-	Camera::getInstance()->setLevelSize(26*64,26*64);
-
-	int level_numb;
+	int level_numb, window_x, window_y, size_x, size_y;
 	ifstream config ("./Resources/gameconfig.txt");
 	if (config.is_open()) {
-
-		if (config.good()) config >> level_numb;
-		m_levels = *new vector<Level>(level_numb);
+		if (config.good()) {
+			config >> window_x >> window_y >> size_x >> size_y >> level_numb;
+			Camera::getInstance()->setWindowSize(window_x, window_y);
+			Camera::getInstance()->setLevelSize(size_x, size_y);
+			m_levels = *new vector<Level>(level_numb);
+		}
 		for(int i = 0; i < level_numb; ++i) {
 			string levelConfig;
 			if (config.good()) config >> levelConfig;
@@ -32,11 +31,10 @@ void GameManager::start() {
 }
 
 void GameManager::run(sf::RenderWindow& App) {
-	/* Handle Events */
-    while (App.isOpen()) {
+	
+	while (App.isOpen()) {
 
 		sf::Event Evento;
-	
 		if (App.pollEvent(Evento)) {	
 
 			// Closing the Window
@@ -45,12 +43,7 @@ void GameManager::run(sf::RenderWindow& App) {
 			}
 
 			// Keyboard Events
-			if (Evento.type == sf::Event::KeyPressed) {
-				
-				
-				/*if (Evento.key.code == sf::Keyboard::Tab) {
-					App.create(sf::VideoMode(800, 600, 32), "Teepots", sf::Style::Fullscreen);
-				}*/
+			if (Evento.type == sf::Event::KeyPressed) {				
 				if (Evento.key.code == sf::Keyboard::Right || Evento.key.code == sf::Keyboard::D) m_levels[m_actualLevel].eventHandler(0);
 				else if (Evento.key.code == sf::Keyboard::Left || Evento.key.code == sf::Keyboard::A) m_levels[m_actualLevel].eventHandler(1);
 				else if (Evento.key.code == sf::Keyboard::Down || Evento.key.code == sf::Keyboard::S) m_levels[m_actualLevel].eventHandler(2);
@@ -69,6 +62,7 @@ void GameManager::run(sf::RenderWindow& App) {
 				else if(Evento.key.code == sf::Keyboard::Escape) m_levels[m_actualLevel].eventHandler(15);
 				else if(Evento.key.code == sf::Keyboard::Down && Evento.key.code == sf::Keyboard:: Right) m_levels[m_actualLevel].eventHandler(16);
 				else if(Evento.key.code == sf::Keyboard::Down && Evento.key.code == sf::Keyboard:: Left) m_levels[m_actualLevel].eventHandler(17);
+				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left));
 				if(sf::Joystick::isButtonPressed(0,0))m_levels[m_actualLevel].eventHandler(555);
 				if(sf::Joystick::isButtonPressed(0,1))m_levels[m_actualLevel].eventHandler(556);
 				if(sf::Joystick::isButtonPressed(0,3))m_levels[m_actualLevel].eventHandler(557);

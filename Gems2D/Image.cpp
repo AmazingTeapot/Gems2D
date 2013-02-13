@@ -24,7 +24,6 @@ bool Image::load () {
 		}
 		m_sprite.setTexture(m_image);
 		return true;
-		
 	}
 	return false;
 }

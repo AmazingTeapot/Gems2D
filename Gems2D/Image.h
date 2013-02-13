@@ -44,6 +44,6 @@ public:
 	   from the path "m_path". "m_path" has to point to an image source.  If the resource is correctly
 	   loaded it returns true. Otherwise it returns false. */
 
-	bool load();
+	virtual bool load();
 
 };

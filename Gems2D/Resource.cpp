@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "Resource.h"
 
-
 Resource::Resource(void) {
 	m_path = "";
 }
@@ -18,8 +17,4 @@ string Resource::getPath () {
 
 void Resource::setPath (string Path) {
 	m_path = Path;
-}
-
-bool Resource::load() {
-	return false;
 }

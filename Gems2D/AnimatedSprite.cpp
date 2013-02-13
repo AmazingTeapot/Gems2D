@@ -24,14 +24,6 @@ AnimatedSprite::AnimatedSprite(int sheetNumber) {
 	m_numberOfSheets = sheetNumber;
 	vector<Sprite> aux (sheetNumber);
 	m_animationSheets = aux;
-	
-	int force_x = 0;
-	int force_y = -GRAVITY;
-	int velocity_x = 0;
-	int velocity_y = 0;
-	int next_position_x = m_position_x;
-	int next_position_y = m_position_y;
-
 }
 
 AnimatedSprite::~AnimatedSprite() { }
@@ -47,7 +39,7 @@ void AnimatedSprite::loadAnimations(string file) {
 	ifstream animations (ANIMATION_PATH + file + "_anim" + LEVEL_EXTENSION);
 	if (animations.is_open()) {
 		if(animations.good()) animations >> num_anim;
-		vector<Animation> anims(num_anim);
+		m_animations = *new vector<Animation>(num_anim);
 		for (int i = 0; i < num_anim; ++i) {
 			int sheet, steps;
 			if(animations.good()) animations >> sheet >> steps;
@@ -58,9 +50,8 @@ void AnimatedSprite::loadAnimations(string file) {
 				m_size_x = height;
 				m_size_y = width;
 			}
-			anims[i] = a;
+			m_animations[i] = a;
 		}
-		m_animations = anims;
 		animations.close();
 	}
 }
@@ -93,11 +84,6 @@ int AnimatedSprite::getAnimation() {
 }
 
 void AnimatedSprite::draw(sf::RenderWindow& App) {
-	int x_max = m_position_x + force_x; 
-	int y_max = m_position_y + force_y;
-	force_y -= GRAVITY;
-	m_position_x = x_max;
-	m_position_y = y_max;
 	
 	vector<int>paint_area = m_animations[0].animate();
 	m_animationSheets[paint_area[0]-1].setPos(m_position_x - Camera::getInstance()->getObsPoint().first + Camera::getInstance()->getWindowSize().first/2, 
