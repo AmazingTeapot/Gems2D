@@ -52,7 +52,6 @@ const int PAUSE = 91;
 const int QUIT = 92;
 const int FULLSCREEN = 93;
 
-
 /* Game Presets */
 
 const int WINDOW_SIZE_X = 800;

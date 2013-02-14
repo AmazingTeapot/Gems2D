@@ -74,44 +74,45 @@ void Level::draw(sf::RenderWindow& App) {
 void Level::eventHandler(int x) {
 	AnimatedElementsLayer* a = (AnimatedElementsLayer*)m_layers[3];
 	switch (x) {
-	case 0:
+	case UP:
 		//cridem la funcio que fa que el pj es mogui cap a la dreta
 		//void right();
 	//	m_status = "running";
 	//	a->getPlayer()->setAnimation(3);
-		obs_x +=2;
+		if (obs_y - 2 <= 0) obs_y = 0;
+		else obs_y -= 2;
 		break;
-	case 1:
+	case DOWN:
 		//cridem la funcio que fa que el pj es mogui cap a l'esquerra
 //		void left (int pos_x, int pos_y);
 	//	m_status = "running";
-		obs_x -=2;
+		if (obs_y + 2 >= Camera::getInstance()->getLevelSize().second) obs_y = Camera::getInstance()->getLevelSize().second;
+		else obs_y += 2;
 		break;
-	case 2:
+	case LEFT:
 		//cridem a la funcio que fa que el personatge s'ajupi
 //		void duck (int pos_x, int pos_y);
 //		m_status = "crouch";
 //		a->getPlayer()->setAnimation(1);
-		obs_y -=2;
+		if (obs_x - 2 <= 0) obs_x = 0;
+		else obs_x -= 2;
 		break;
-	case 3:
+	case RIGHT:
 		//cridem a la funcio que fa que el personatge salti
 		//void jump (int force_x, int force_y, vector<int> matrix_collision);
 	//	a->getPlayer()->setAnimation(2);
-		obs_y +=2;
-break;
-	case 4:
+		obs_x += 2;
+		break;
+	case ACTION_JUMP:
 		//es van recorrent totes les trampes que hi ha al mapa 
 		//(++trap_id)%total_traps;
 		break;
-	case 5:
+	case ACTION_RUN:
 	case 6:
 	case 7:
 	case 8:
 	case 9:
 	case 10:
-	case 11:
-	case 12:
 	case 13:
 	//	if(start_up == false//estem assignant les trampes(l'enemic està escollint les trampes)) {
 			//cridem a la funcio que posa la trampa X al numero 1
