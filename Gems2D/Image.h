@@ -5,6 +5,8 @@
 
 using namespace std;
 
+
+
 class Image: public Resource {
 
 private:

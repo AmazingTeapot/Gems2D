@@ -5,24 +5,29 @@
 
 using namespace std;
 
+/* Class: Tileset
+   Brief: It represents a bunch of tiles grouped in a single Texture resource.
+		  It provides tools to stamp the tiles on the screen, scale them. 
+		  It inherits its methods from Sprite */
+
 class Tileset: public Sprite {
 
-private:
-
-public:
+	public:
 	
 	/* CONSTRUCTORS */
 
-	// Empty constructor
+	/* Empty constructor */
 	Tileset();
 
-	// Constructor with a base path for the resource
+	/* Constructor with a base path for the resource */
 	Tileset(int tiles_x, int tiles_y, Image* image);
 
+	
 	/* DESTRUCTORS */
 
-	// Empty destructor
+	/* Empty destructor */
 	~Tileset();
+	
 	
 	/* DOMAIN FUNCTIONS */
 

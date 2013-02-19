@@ -6,8 +6,6 @@
 
 using namespace std;
 
-const int GRAVITY = 9.8;
-
 class AnimatedSprite {
 
 public:
