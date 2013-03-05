@@ -6,40 +6,60 @@
 
 using namespace std;
 
+/* Class: Animated Sprite
+   Brief: This class extends the concept of Sprite. It adapts an sprite to work with animations.
+		  It has some animation sheets as resources (that are, in fact, SFML Textures) and has a bunch
+		  of "Animation" objects mapped to all the Animated Sprite 'actions' */
+
+
 class AnimatedSprite {
 
-public:
+	public:
 
-AnimatedSprite();
+	/* CONSTRUCTORS */
 
-AnimatedSprite(int sheets);
+	/* Empty constructor. It sets the number of animation sheets to 1 by default */
+	AnimatedSprite();
 
-~AnimatedSprite();
+	/* With this constructor you can set the number of animation sheets the animated sprite will have */
+	AnimatedSprite(int sheets);
 
-void loadSheet(int sheetNumber, string sheetName);
 
-void loadAnimations(string file);
+	/* DESTRUCTORS */
 
-void setPosition(int x, int y);
+	/* Empty destructor */
+	~AnimatedSprite();
 
-pair<int, int> getPosition();
 
-pair<int, int> getSize();
+	/* DOMAIN FUNCTIONS */
 
-void setAnimation(int i);
+	/* This function matches the associated resource "sheetName" to the sheet number indicated. 
+	   SheetName is the name of an image. */
+	void loadSheet(int sheetNumber, string sheetName);
 
-int getAnimation();
+	/* This function takes the name of a file that has all the animation coordinates of all the actions 
+	   of the Animated Sprite stored, and it creates and initializes an "Animation" object for every action on the file. */
+	void loadAnimations(string file);
 
-void draw(sf::RenderWindow& App);
+	/* SETTERS */
 
-private:
-vector<Animation> m_animations;
-vector<Sprite> m_animationSheets;
-int m_actualAnimation;
-int m_numberOfSheets;
-int m_position_x;
-int m_position_y;
-int m_size_x;
-int m_size_y;
+	/* Sets the position of the animated sprite to (x, y) */
+	void setPosition(int x, int y);
+
+	void setAnimation(int i);
+
+	int getAnimation();
+
+	void draw(sf::RenderWindow& App);
+
+	private:
+	vector<Animation> m_animations;
+	vector<Sprite> m_animationSheets;
+	int m_actualAnimation;
+	int m_numberOfSheets;
+	int m_position_x;
+	int m_position_y;
+	int m_size_x;
+	int m_size_y;
 };
 
