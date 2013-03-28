@@ -12,29 +12,43 @@
 
 class MovingImageLayer : public Layer {
 
-public:
+	public:
 
-	/* Creates a void Moving Image Layer */
+	/* CONSTRUCTORS */
+
+	/* Empty constructor. Creates a void Moving Image Layer */
 	MovingImageLayer();
 
-	/* Creates a Moving Image Layer an
+	/* Creates a Moving Image Layer and sets it to display the Image i */
 	MovingImageLayer(Image* i);
 
+
+	/* DESTRUCTORS */
+
+	/* Empty destructor */ 
 	~MovingImageLayer();
 
+
+	/* SETTERS */
+
+	/* Sets the layer presets, located on the file defined by path */
 	virtual void setLayer (string path);
 
+
+	/* DOMAIN FUNCTIONS */
+
+	/* Draws the layer on the window. Concretely, draws the subrectangle of the image visible by the player on the window. */
 	virtual void draw (sf::RenderWindow& App);
 
-private:
 
-Sprite m_background;
-int m_image_size_x;
-int m_image_size_y;
-int m_scene_size_x;
-int m_scene_size_y;
-int m_window_size_x;
-int m_window_size_y;
+	private:
+	Sprite m_background;
+	int m_image_size_x;
+	int m_image_size_y;
+	int m_scene_size_x;
+	int m_scene_size_y;
+	int m_window_size_x;
+	int m_window_size_y;
 
 };
 
