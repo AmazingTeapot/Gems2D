@@ -7,20 +7,20 @@
 AnimatedSprite::AnimatedSprite() { 
 	m_actualAnimation = 0;
 	m_numberOfSheets = 1;
- 
-	int force_x = 0;
-	int force_y = -GRAVITY;
-	int velocity_x = 0;
-	int velocity_y = 0;
-	int next_position_x = m_position_x;
-	int next_position_y = m_position_y;
+	m_position_x = 0;
+	m_position_y = 0;
+	m_size_x = 0;
+	m_size_y = 0;
 }
 
 AnimatedSprite::AnimatedSprite(int sheetNumber) { 
 	m_actualAnimation = 0;
 	m_numberOfSheets = sheetNumber;
-	vector<Sprite> aux (sheetNumber);
-	m_animationSheets = aux;
+	m_animationSheets = *new vector<Sprite>(sheetNumber);
+	m_position_x = 0;
+	m_position_y = 0;
+	m_size_x = 0;
+	m_size_y = 0;
 }
 
 AnimatedSprite::~AnimatedSprite() { }

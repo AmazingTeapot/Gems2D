@@ -11,7 +11,6 @@ using namespace std;
 		  It has some animation sheets as resources (that are, in fact, SFML Textures) and has a bunch
 		  of "Animation" objects mapped to all the Animated Sprite 'actions' */
 
-
 class AnimatedSprite {
 
 	public:
@@ -51,6 +50,12 @@ class AnimatedSprite {
 
 
 	/* GETTERS */
+
+	/* This functions returns the position of the animated sprite, related to the level. */
+	pair<int, int> getPosition();
+
+	/* This functions returns the size of the animated sprite */
+	pair <int, int> getSize();
 
 	/* This functions returns the id of the actual animation */
 	int getAnimation();
