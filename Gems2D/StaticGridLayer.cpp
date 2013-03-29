@@ -24,8 +24,12 @@ StaticGridLayer::StaticGridLayer(Image* tileset, int tiles_x, int tiles_y) {
 StaticGridLayer::~StaticGridLayer() { }
 
 
-void StaticGridLayer::setTileset(Image* i) {
-	m_tileset.setImage(i);
+void StaticGridLayer::setTileset(Image* tileset, int tiles_x, int tiles_y) {
+	m_tiles_x = tiles_x;
+	m_tiles_y = tiles_y;  
+	m_tile_size_x = (tileset->getResource().getSize().x)/tiles_x;
+	m_tile_size_y = (tileset->getResource().getSize().y)/tiles_y;
+	m_tileset.setImage(tileset);
 }
 
 void StaticGridLayer::setLayer (string level_map) {

@@ -46,10 +46,19 @@ class AnimatedSprite {
 	/* Sets the position of the animated sprite to (x, y) */
 	void setPosition(int x, int y);
 
+	/* Sets the actual animation to i */
 	void setAnimation(int i);
 
+
+	/* GETTERS */
+
+	/* This functions returns the id of the actual animation */
 	int getAnimation();
 
+
+	/* DOMAIN FUNCTIONS */
+
+	/* It draws the animated sprite on the screen. */
 	void draw(sf::RenderWindow& App);
 
 	private:
@@ -62,4 +71,3 @@ class AnimatedSprite {
 	int m_size_x;
 	int m_size_y;
 };
-
