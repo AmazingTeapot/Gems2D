@@ -47,13 +47,11 @@ const int MAGIC_3 = 33;
 const int MAGIC_4 = 34;
 
 /* 91~99 - System-Related Constants */
-
 const int PAUSE = 91;
 const int QUIT = 92;
 const int FULLSCREEN = 93;
 
 /* Game Presets */
-
 const int WINDOW_SIZE_X = 800;
 const int WINDOW_SIZE_Y = 600;
 

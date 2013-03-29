@@ -8,36 +8,49 @@
 #include "StaticElementsLayer.h"
 #include "AnimatedElementsLayer.h"
 
-using namespace std;
+/* Class: Level
+   Brief: This class will be used as an utility to implement every level. It has some basic methods and, for every level, an inherited
+          class with specific code will be needed.. */
+
+/* THIS CLASS IS UNDER CONSTRUCTION */
 
 class Level {
 
-public:
+	public:
 
-Level();
+	/* CONSTRUCTORS */
 
-~Level();
+	/* Empty constructor */
+	Level();
 
-void setLayer1 (string path);
 
-void draw(sf::RenderWindow& App);
+	/* DESTRUCTORS */
+	
+	/* Empty destructor */
+	~Level();
 
-void eventHandler (int x);
 
-private:
+	/* SETTERS */
 
-int m_size_x;
-int m_size_y;
-vector<Layer*> m_layers;
+	/* Layer setter - to be implemented. */
+	void setLayer1 (string path);
 
-// The scene center, relative to the map.
-float center_x;
-float center_y;
 
-/* The player coordinates, relative to the viewport. We can get the map relative player coordinates by doing
-   (center_x + obs_x, center_y + obs_y). */
+	/* DOMAIN FUNCTIONS */
 
-float obs_x;
-float obs_y;
+	/* This function draws all the layers on the scene */
+	void draw(sf::RenderWindow& App);
 
+	/* This function acts as a handler. It handles all the events sent by the manager and acts consequently. */
+	void eventHandler (int x);
+
+
+	private:
+	int m_size_x;
+	int m_size_y;
+	vector<Layer*> m_layers;
+	float center_x;
+	float center_y;
+	float obs_x;
+	float obs_y;
 };

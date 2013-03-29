@@ -91,8 +91,7 @@ public:
     bool isPressed(float x, float y);
 
 
-protected:
-
+	protected:
     float m_xpos;
     float m_ypos;
     int m_xsize;
