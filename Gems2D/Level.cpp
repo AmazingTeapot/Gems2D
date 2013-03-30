@@ -60,7 +60,7 @@ void Level::setLayer1 (string levelName) {
 	}
 }
 
-void Level::draw(sf::RenderWindow& App) {
+void Level::draw(sf::RenderWindow& App, float deltaTime) {
 	for(int i = 0; i < m_layers.size(); ++i) {
 		if(i != 3) m_layers[i]->draw(App);
 		else {
@@ -101,7 +101,7 @@ void Level::eventHandler(int x) {
 		//cridem a la funcio que fa que el personatge salti
 		//void jump (int force_x, int force_y, vector<int> matrix_collision);
 	//	a->getPlayer()->setAnimation(2);
-		obs_x += 2;
+		obs_x += (deltaTime/(1/60))*0.1;
 		break;
 	case ACTION_JUMP:
 		//es van recorrent totes les trampes que hi ha al mapa 

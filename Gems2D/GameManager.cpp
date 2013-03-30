@@ -28,10 +28,13 @@ void GameManager::start() {
 
 void GameManager::run(sf::RenderWindow& App) {
 	
+	sf::Clock c;
 	while (App.isOpen()) {
-
 		sf::Event Evento;
-	/*	if (App.pollEvent(Evento)) {	
+		float deltaTime = c.getElapsedTime().asMilliseconds;
+		c.restart();
+
+		/*	if (App.pollEvent(Evento)) {	
 
 			// Closing the Window
 			if(Evento.type == sf::Event::Closed) {
@@ -86,8 +89,7 @@ void GameManager::run(sf::RenderWindow& App) {
 	//	}
 	
 		/* Draw */
-
-		m_levels[m_actualLevel].draw(App);
+		m_levels[m_actualLevel].draw(App, deltaTime);
 		App.display();
 
 	   // Clear the screen

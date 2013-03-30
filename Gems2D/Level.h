@@ -39,7 +39,7 @@ class Level {
 	/* DOMAIN FUNCTIONS */
 
 	/* This function draws all the layers on the scene */
-	void draw(sf::RenderWindow& App);
+	void draw(sf::RenderWindow& App, float deltaTime);
 
 	/* This function acts as a handler. It handles all the events sent by the manager and acts consequently. */
 	void eventHandler (int x);
