@@ -33,19 +33,23 @@ class Level {
 	/* SETTERS */
 
 	/* Layer setter - to be implemented. */
-	void setLayer1 (string path);
+	void setLayers (string path);
 
 
 	/* DOMAIN FUNCTIONS */
 
+	/* This function updates all the elements */
+	void update(float deltaTime);
+
 	/* This function draws all the layers on the scene */
-	void draw(sf::RenderWindow& App, float deltaTime);
+	void draw(sf::RenderWindow& App);
 
 	/* This function acts as a handler. It handles all the events sent by the manager and acts consequently. */
 	void eventHandler (int x);
 
 
 	private:
+	vector<int> events;
 	int m_size_x;
 	int m_size_y;
 	vector<Layer*> m_layers;

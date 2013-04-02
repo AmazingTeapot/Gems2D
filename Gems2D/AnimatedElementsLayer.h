@@ -37,6 +37,9 @@ class AnimatedElementsLayer : public Layer {
 
 
 	/* DOMAIN FUNCTIONS */
+	
+	/* Updates the position of the background image according to the observer */
+	virtual void update ();
 
 	/* Draws the layer on the window. Concretely, draws all the elements of the subrectangle of the image visible by the player on the window.
 	   It would be good to define an offset range to precharge the elements */

@@ -60,8 +60,8 @@ class Camera {
 	int m_window_height;
 	int m_map_width;
 	int m_map_height;
-	int m_obs_x;
-	int m_obs_y;
+	float m_obs_x;
+	float m_obs_y;
 };
 
 

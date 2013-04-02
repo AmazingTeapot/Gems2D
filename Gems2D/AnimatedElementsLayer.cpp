@@ -42,6 +42,10 @@ void AnimatedElementsLayer::setLayer (string level_elements) {
 	}
 }
 
+void AnimatedElementsLayer::update() {
+
+}
+
 void AnimatedElementsLayer::draw (sf::RenderWindow& App) {
 	vector<int> drawableArea;
 	Camera::getInstance()->getDrawableArea(drawableArea);

@@ -20,7 +20,7 @@ void GameManager::start() {
 		for(int i = 0; i < level_numb; ++i) {
 			string levelConfig;
 			if (config.good()) config >> levelConfig;
-			m_levels[i].setLayer1(levelConfig);
+			m_levels[i].setLayers(levelConfig);
 		}
 	}
 	m_actualLevel = 0;
@@ -31,7 +31,7 @@ void GameManager::run(sf::RenderWindow& App) {
 	sf::Clock c;
 	while (App.isOpen()) {
 		sf::Event Evento;
-		float deltaTime = c.getElapsedTime().asMilliseconds;
+		float deltaTime = c.getElapsedTime().asSeconds();
 		c.restart();
 
 		/*	if (App.pollEvent(Evento)) {	
@@ -89,7 +89,8 @@ void GameManager::run(sf::RenderWindow& App) {
 	//	}
 	
 		/* Draw */
-		m_levels[m_actualLevel].draw(App, deltaTime);
+		m_levels[m_actualLevel].update(deltaTime);
+		m_levels[m_actualLevel].draw(App);
 		App.display();
 
 	   // Clear the screen

@@ -51,6 +51,10 @@ void StaticGridLayer::setLayer (string level_map) {
 	level.close();
 }
 
+void StaticGridLayer::update() {
+
+}
+
 void StaticGridLayer::draw(sf::RenderWindow& App) {
 	vector<int> drawableArea;
 	Camera::getInstance()->getDrawableArea(drawableArea);
