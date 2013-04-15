@@ -32,11 +32,12 @@ class StaticElementsLayer : public Layer {
 
 	/* DOMAIN FUNCTIONS */
 
-	/* Updates the position of the static images according to the observer */
-	virtual void update ();
+	/* It will be used on the future if we want to update something. */
+	virtual void update (float deltaTime);
 
 	/* Draws the layer on the window. Concretely, draws all the elements of the subrectangle of the image visible by the player on the window.
-	   It would be good to define an offset range to precharge the elements */
+	   It would be good to define an offset range to precharge the elements. It acts as a stamper, having a single stamp for each of the
+	   different elements that can be drawn on the scene. */
 	virtual void draw (sf::RenderWindow& App);
 	
 	private:

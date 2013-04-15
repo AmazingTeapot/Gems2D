@@ -37,8 +37,8 @@ class StaticGridLayer : public Layer {
 	
 	/* DOMAIN FUNCTIONS */
 
-	/* Updates the position of the background image according to the observer */
-	virtual void update ();
+	/* It will be used on the future if we want to update something. */
+	virtual void update (float deltaTime);
 
 	/* Draws the layer on the window. Concretely, draws the tiles visible by the player on the window. */
 	virtual void draw (sf::RenderWindow& App);

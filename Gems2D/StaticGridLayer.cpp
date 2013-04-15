@@ -51,8 +51,8 @@ void StaticGridLayer::setLayer (string level_map) {
 	level.close();
 }
 
-void StaticGridLayer::update() {
-
+void StaticGridLayer::update(float deltaTime) {
+	/* No need of update because we're using the tileset as a set of stamps. */
 }
 
 void StaticGridLayer::draw(sf::RenderWindow& App) {

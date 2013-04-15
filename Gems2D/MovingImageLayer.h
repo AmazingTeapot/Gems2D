@@ -38,7 +38,7 @@ class MovingImageLayer : public Layer {
 	/* DOMAIN FUNCTIONS */
 
 	/* Updates the position of the background image according to the observer */
-	virtual void update ();
+	virtual void update (float deltaTime);
 
 	/* Draws the layer on the window. Concretely, draws the subrectangle of the image visible by the player on the window. */
 	virtual void draw (sf::RenderWindow& App);

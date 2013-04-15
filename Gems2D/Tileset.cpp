@@ -37,3 +37,4 @@ void Tileset::drawTile(int tile, float x_pos, float y_pos, sf::RenderWindow& App
 void Tileset::scaleTiles(float scaleFactor) {
 	setSize(m_xsize*scaleFactor, m_ysize*scaleFactor);
 }
+

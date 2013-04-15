@@ -35,14 +35,15 @@ void StaticElementsLayer::setLayer (string path) {
 				level >> m_layer_elements[i][0] >> m_layer_elements[i][1] >> m_layer_elements[i][2] 
 				>> m_layer_elements[i][3] >> m_layer_elements[i][4]; 
 				string pos = to_string(m_layer_elements[i][4]);
-				string resource = m_level_folder + "/" + pos;				
+				string resource = m_level_folder + "/" + pos;	
+				cout << pos << endl;
 			}
 		}
 	}
 	level.close();
 }
 
-void StaticElementsLayer::update() {
+void StaticElementsLayer::update(float deltaTime) {
 	/* No need of update because we're using the sprite array as a set of stamps. */
 }
 
@@ -53,10 +54,10 @@ void StaticElementsLayer::draw (sf::RenderWindow& App) {
 	int window_size_y = Camera::getInstance()->getWindowSize().second;
 		for(int i = 0; i < m_layer_elements.size(); ++i) { 
 		if (isDrawable(m_layer_elements[i], drawableArea))	{
-			m_drawables[m_layer_elements[i][4]].setPos((float)m_layer_elements[i][0] - Camera::getInstance()->getObsPoint().first + Camera::getInstance()->getWindowSize().first/2, 
+			m_drawables[m_layer_elements[i][4]-1].setPos((float)m_layer_elements[i][0] - Camera::getInstance()->getObsPoint().first + Camera::getInstance()->getWindowSize().first/2, 
 				(float)m_layer_elements[i][1] - Camera::getInstance()->getObsPoint().second + Camera::getInstance()->getWindowSize().second/2);
-			m_drawables[m_layer_elements[i][4]].setSize(m_layer_elements[i][2], m_layer_elements[i][3]);
-			m_drawables[m_layer_elements[i][4]].draw(App);
+			m_drawables[m_layer_elements[i][4]-1].setSize(m_layer_elements[i][2], m_layer_elements[i][3]);
+			m_drawables[m_layer_elements[i][4]-1].draw(App);
 		}
 	}
 }

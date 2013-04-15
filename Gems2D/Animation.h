@@ -20,8 +20,8 @@ class Animation {
 	/* Empty constructor. It sets the animation at the first animation sheet. */
 	Animation();
 
-	/* This constructor allows you to set in which animation sheet is the animation placed */
-	Animation(int sheet);
+	/* This constructor allows you to set in which animation sheet is the animation placed, and its speed */
+	Animation(int sheet, float animSpeed);
 
 
 	/* DESTRUCTORS */
@@ -36,13 +36,17 @@ class Animation {
 	   and the size of the sub-rectangle */
 	void addStep(int up, int left, int height, int width);
 
-	/* It iterates trough the animation sequence and returns the coordinates of the actual animation step */
-	vector<int> animate();
+	/* It iterates trough the animation steps according to the time passed since the last game iteration */
+	void animate(float deltaTime);
+
+	/* It returns the animation sheet number and the coordinates of the actual animation step */
+	vector<int> getStep();
 
 	private:
 
 	int m_sheet;
-	int m_step;
+	float m_step;
+	float m_animationSpeed;
 	vector<vector <int>> m_steps;
 
 };

@@ -63,7 +63,6 @@ void Level::setLayers (string levelName) {
 
 void Level::update(float deltaTime) {
 	float movement = (100*deltaTime);
-		cout << movement << endl;
 	if(events[UP]) {
 		if (obs_y - movement <= 0) obs_y = 0;
 		else obs_y -= movement;
@@ -84,7 +83,7 @@ void Level::update(float deltaTime) {
 		else obs_x += movement;
 	}
 	events = *new vector<int>(100, 0);
-	for(int i = 0; i < m_layers.size(); ++i) m_layers[i]->update();
+	for(int i = 0; i < m_layers.size(); ++i) m_layers[i]->update(deltaTime);
 }
 
 void Level::draw(sf::RenderWindow& App) {

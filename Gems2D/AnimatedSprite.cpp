@@ -40,7 +40,7 @@ void AnimatedSprite::loadAnimations(string file) {
 		for (int i = 0; i < num_anim; ++i) {
 			int sheet, steps;
 			if(animations.good()) animations >> sheet >> steps;
-			Animation a(sheet);
+			Animation a(sheet, DEFAULT_ANIM_SPEED);
 			for(int j = 0; j < steps; ++j) {
 				if(animations.good()) animations >> left >> up >> height >> width;
 				a.addStep(left, up, height, width);
@@ -80,9 +80,13 @@ int AnimatedSprite::getAnimation() {
 	return m_actualAnimation;
 }
 
+
+void AnimatedSprite::update(float deltaTime) {
+	m_animations[m_actualAnimation].animate(deltaTime);
+}
+
 void AnimatedSprite::draw(sf::RenderWindow& App) {
-	
-	vector<int>paint_area = m_animations[0].animate();
+	vector<int>paint_area = m_animations[m_actualAnimation].getStep();
 	m_animationSheets[paint_area[0]-1].setPos(m_position_x - Camera::getInstance()->getObsPoint().first + Camera::getInstance()->getWindowSize().first/2, 
 				m_position_y - Camera::getInstance()->getObsPoint().second + Camera::getInstance()->getWindowSize().second/2);
 	m_animationSheets[paint_area[0]-1].setSubRect(paint_area[1], paint_area[2], paint_area[3], paint_area[4]);

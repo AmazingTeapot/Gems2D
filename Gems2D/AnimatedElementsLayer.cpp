@@ -20,7 +20,7 @@ void AnimatedElementsLayer::setLayer (string level_elements) {
 	ifstream level (LEVEL_PATH + level_elements + "/animated_elem" + LEVEL_EXTENSION);
 	if (level.is_open()) {
 		if(level.good()) level >> m_elements;
-		vector<AnimatedSprite> aux(m_elements);
+		m_layer_elements = *new vector<AnimatedSprite>(m_elements);
 		for(int i = 0; i < m_elements; ++i) {
 			int sheets, x_pos, y_pos;
 			string res_name, res_folder;
@@ -35,15 +35,16 @@ void AnimatedElementsLayer::setLayer (string level_elements) {
 			anim.loadAnimations(res_name);
 			if(level.good()) level >> x_pos >> y_pos;
 			anim.setPosition(x_pos, y_pos);
-			aux[i] = anim;
+			m_layer_elements[i] = anim;
 		}
-		m_layer_elements = aux;
 		level.close();
 	}
 }
 
-void AnimatedElementsLayer::update() {
-
+void AnimatedElementsLayer::update(float deltaTime) {
+	for(int i = 0; i < m_layer_elements.size(); ++i) {
+		m_layer_elements[i].update(deltaTime);
+	}
 }
 
 void AnimatedElementsLayer::draw (sf::RenderWindow& App) {

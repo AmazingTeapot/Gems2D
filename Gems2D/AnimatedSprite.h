@@ -63,6 +63,9 @@ class AnimatedSprite {
 
 	/* DOMAIN FUNCTIONS */
 
+	/* It updates the current step of the animation, according to the time between iterations */
+	void update(float deltaTime);
+
 	/* It draws the animated sprite on the screen. */
 	void draw(sf::RenderWindow& App);
 

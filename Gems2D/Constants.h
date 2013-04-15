@@ -55,3 +55,6 @@ const int FULLSCREEN = 93;
 const int WINDOW_SIZE_X = 800;
 const int WINDOW_SIZE_Y = 600;
 
+/* Default Animation Speed, measured in Steps Per Second */
+const float DEFAULT_ANIM_SPEED = 2; 
+

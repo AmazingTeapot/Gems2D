@@ -1,0 +1,98 @@
+HECTOR 2 MALAME
+
+2) Una operation unit ...
+a. Podria ser que no tingués ni un link OK ni un link KO de sortida
+b. Com a mínim ha de tenir un link OK de sortida <>
+c. Ha de tenir sempre un link OK i una altre KO de sortida
+5) Les extensions per a Context-Awareness i RIA estan plenament disponibles a la versió comercial de WebRatio
+Vertader <>
+Fals
+6) El page computation algorithm descrit a la secció 2.2 no ha calgut que fos modificat per suportar les noves extensions RIA.
+Vertader 
+Fals   <>
+
+CRIS 1 MALAMENT
+HECTOR 2 MALAMENT
+SERGIO PODRIA TENIR 3, 2 o 1
+3) El fet d'anar afegint noves extensions a WebML ha comportat, entre altres coses, haver de definir noves content units. Però no ha calgut modificar les originals.
+Vertader 
+Fals <>!!!!!
+7) El context cloud de la figura 8 no té res a veure amb el concepte de Cloud Computing
+Vertader <>
+Fals ¡!!!!
+9) No té cap mena de sentit que una Request-Response aparegui en el disseny d'una Web Service Publication
+Vertader ¡!!!!! <>
+Fals 
+
+
+Cris: 4 Malament
+Héctor: 5 Malament
+Sergio: 5 Malament
+Si sabem que la 8 la tenim malament tots i la correcta es la a)
+Cris: 3 Malament
+Héctor: 4 Malament
+Sergio: 4 Malament
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1) Un Normal Link és aquell que representa una navegació que ha de ser activada explícitament per l'usuari, al seleccionar un enllaç html (<a>), clicant sobre un botó, etc.
+Vertader <>
+Fals
+
+
+10) Quina de les afirmacions següents sobre els transport links és correcta
+a. Pot ser que hi hagi transport links non-contextuals
+b. No hi pot haver un transport link entre dues content units que pertanyin a pàgines diferents i independents
+c. El transport link és un intra-page link <> ¡!!!
+
+
+
+8) L'etiqueta "C" en una Entitat del Content Model vol dir que
+ a. aquella entitat representa informació que s'emmagatzemarà en el Client
+b. Qualsevol de les altres dues opcions és correcta ¡!!!! <>
+c. aquella entitat representa informació del Context de l'usuari (localització, idiomes preferits, ...)
+
+4) Em sembla que m'agradarà fer una pràctica amb el WebRatio
+a. No ho sé, em fa mala espina
+b. No, segur que és un tostón.
+c. Sí, em moro de ganes de fer-la
+d. Pot estar bé, ja veurem <>
+
+Per a que tu treguis un 6 i jo un 5, vol dir que una pregunte q tu tenies malament jo la tinc malament tb
+Aleshores, com la unica que no te dues respostes es la 10), vol dir que la tenim els dos malament
+
+Si els dos fallem la de resposta multiple, pot passar:
+Com son de cert o fals, al canviar-la pot passar que
+a)Tu la tenies be i ara la tenim malament -> -1 punts
+b) Tu la tenies malament i ara la tenim be -> +1 punts
+
+Es a dir, que si arreclo 3 i la cago en una, son +2 punts
+Si arreclo 2 i la cago en 2 -> ens quedem igual
+Si arreclo 1 i la cago en 3 -> -2 punts.
+
+Lunic q pot trencar l'esquema es que una q tinguessis malament ara segueixi malament, o que una q tinguesis b la tinguem be ara
+Aixo nomes pot passar amb una multiresposta
+Aleshores, com la de la practica es absurd q sigui, nomes tenim una multiresposta
+Ho que significa que la tenies malament, i ara la seguim tenint malament
+Then
+
+Si arreclo 2 i la cago en una -> `
+
+Sempre son de dos en dos, per tant tu tens un 6, hauria d'haver tret una nota parell.
+Perque no he tret una nota parell? no ho se xD
+
+2 encerts i un error: Treuria un 7
+1 encert i dos errors: Treuria un 5 (es el que ha passat)
+etc...
+
