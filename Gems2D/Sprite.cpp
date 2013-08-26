@@ -72,8 +72,6 @@ void Sprite::setPos(float xpos, float ypos) {
 
 void Sprite::setSize(int xsize, int ysize) {
 	if(xsize != 0 && ysize != 0) m_Sprite.setScale((float)xsize/(float)m_xsize, (float)ysize/(float)m_ysize);
-	m_xsize = xsize;
-    m_ysize = ysize;
 }
 
 void Sprite::setSubRect(int left, int up, int right, int down) {

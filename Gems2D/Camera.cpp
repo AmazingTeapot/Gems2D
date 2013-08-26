@@ -54,4 +54,13 @@ void Camera::updateCameraPos (int player_x, int player_y) {
 	if(player_y - m_obs_y >= m_window_height/4 && m_obs_y < Camera::getInstance()->getLevelSize().second - Camera::getInstance()->getWindowSize().second/2) m_obs_y += (player_y - m_obs_y - m_window_height/4);
 	if(player_y - m_obs_y <= -m_window_height/4 && m_obs_y > Camera::getInstance()->getWindowSize().second/2) m_obs_y += (player_y - m_obs_y + m_window_height/4);
 }
+ 
+/* ESTO HAY QUE BORRARLO */
 
+int Camera::getSteps() {
+	return m_numSteps;
+}
+
+void Camera::setSteps(int i) {
+	m_numSteps = i;
+}

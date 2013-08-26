@@ -52,6 +52,9 @@ class Camera {
 	   (25% of the screen, in future updates this value will be able to change) the observer moves on. */
 	void updateCameraPos (int player_x, int player_y);
 
+	void setSteps(int i);
+	int getSteps();
+
 	private:
 	Camera();
 	Camera(Camera* const&);
@@ -62,6 +65,5 @@ class Camera {
 	int m_map_height;
 	float m_obs_x;
 	float m_obs_y;
+	int m_numSteps;
 };
-
-

@@ -7,6 +7,7 @@
 #include "MovingImageLayer.h"
 #include "StaticElementsLayer.h"
 #include "AnimatedElementsLayer.h"
+#include "Box2D\Box2D.h"
 
 /* Class: Level
    Brief: This class will be used as an utility to implement every level. It has some basic methods and, for every level, an inherited
@@ -57,4 +58,8 @@ class Level {
 	float center_y;
 	float obs_x;
 	float obs_y;
+	AnimatedSprite m_player;
+	b2World world;	b2Body* groundBody;	b2PolygonShape groundBox;
+	b2Body* body;
+	b2PolygonShape dynamicBox;
 };

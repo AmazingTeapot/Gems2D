@@ -28,7 +28,7 @@ void AnimatedElementsLayer::setLayer (string level_elements) {
 			AnimatedSprite anim(sheets);
 			for (int j = 0; j < sheets; ++j) {
 				if(!ResourceManager::getInstance()->checkImage(res_name + "_sheet_" + to_string(j+1))) {
-					ResourceManager::getInstance()->loadImage(res_name + "_sheet_" + to_string(j+1), res_folder + "/" + res_name + "_sheet_" + to_string(j+1));
+					ResourceManager::getInstance()->loadImage(res_name + "_sheet_" + to_string(j+1), ANIMATED_ELEMENTS_LAYER_PATH + res_name + "_sheet_" + to_string(j+1));
 				}
 				anim.loadSheet(j+1, res_name + "_sheet_" + to_string(j+1));
 			}

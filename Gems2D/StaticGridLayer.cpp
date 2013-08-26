@@ -33,10 +33,10 @@ void StaticGridLayer::setTileset(Image* tileset, int tiles_x, int tiles_y) {
 }
 
 void StaticGridLayer::setLayer (string level_map) {
-	Tileset background(16, 16, ResourceManager::getInstance()->getImage("level1_tileset"));
+	Tileset background(16, 16, ResourceManager::getInstance()->getImage(level_map + "_tileset"));
 	background.scaleTiles(4);
 	m_tileset = background;
-	ifstream level (LEVEL_PATH + level_map + LEVEL_EXTENSION);
+	ifstream level (LEVEL_PATH + level_map + "/tilemap" + LEVEL_EXTENSION);
 	string map_path;
 	if (level.is_open()) {
 		if(level.good()) level >> map_path >> m_tiles_x >> m_tiles_y >> m_tile_size_x >> m_tile_size_y;

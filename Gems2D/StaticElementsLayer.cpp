@@ -21,22 +21,21 @@ void StaticElementsLayer::setLayer (string path) {
 	ifstream level (LEVEL_PATH + path + "/static_elem" + LEVEL_EXTENSION);
 	if (level.is_open()) {
 		if(level.good()) level >> m_level_folder >> m_elements >> m_diff_resources;
-		m_drawables = *new vector<Sprite>(m_elements);
+		string name;
 		for(int i = 0; i < m_diff_resources; ++i) {
-			string pos = to_string(i+1);
-			string resource = m_level_folder + "/" + pos;
-			ResourceManager::getInstance()->loadImage(resource, resource);
-			m_drawables[i] = *new Sprite(ResourceManager::getInstance()->getImage(resource));
+			level >> name;
+			string resource = STATIC_ELEMENTS_LAYER_PATH + name;
+			ResourceManager::getInstance()->loadImage(m_level_folder + "_" + resource, resource);
+			m_drawables[name] = new Sprite(ResourceManager::getInstance()->getImage(m_level_folder + "_" + resource));
 		}
-		vector < vector <int>> aux (m_elements, vector <int> (5));
-		m_layer_elements = aux;
+		m_layer_elements = vector < vector <int>> (m_elements, vector <int> (4));
+		m_layer_elements_type = vector<string>(m_elements);
+
 		for (int i = 0; i < m_elements; ++i) {
 			if(level.good()) {
 				level >> m_layer_elements[i][0] >> m_layer_elements[i][1] >> m_layer_elements[i][2] 
-				>> m_layer_elements[i][3] >> m_layer_elements[i][4]; 
-				string pos = to_string(m_layer_elements[i][4]);
-				string resource = m_level_folder + "/" + pos;	
-				cout << pos << endl;
+				>> m_layer_elements[i][3] >> m_layer_elements_type[i]; 
+
 			}
 		}
 	}
@@ -52,12 +51,13 @@ void StaticElementsLayer::draw (sf::RenderWindow& App) {
 	Camera::getInstance()->getDrawableArea(drawableArea);
 	int window_size_x = Camera::getInstance()->getWindowSize().first;
 	int window_size_y = Camera::getInstance()->getWindowSize().second;
-		for(int i = 0; i < m_layer_elements.size(); ++i) { 
+	for(int i = 0; i < m_layer_elements.size(); ++i) { 
 		if (isDrawable(m_layer_elements[i], drawableArea))	{
-			m_drawables[m_layer_elements[i][4]-1].setPos((float)m_layer_elements[i][0] - Camera::getInstance()->getObsPoint().first + Camera::getInstance()->getWindowSize().first/2, 
+			(*m_drawables[m_layer_elements_type[i]]).setPos((float)m_layer_elements[i][0] - Camera::getInstance()->getObsPoint().first + Camera::getInstance()->getWindowSize().first/2, 
 				(float)m_layer_elements[i][1] - Camera::getInstance()->getObsPoint().second + Camera::getInstance()->getWindowSize().second/2);
-			m_drawables[m_layer_elements[i][4]-1].setSize(m_layer_elements[i][2], m_layer_elements[i][3]);
-			m_drawables[m_layer_elements[i][4]-1].draw(App);
+			(*m_drawables[m_layer_elements_type[i]]).setSize(m_layer_elements[i][2], m_layer_elements[i][3]);
+			(*m_drawables[m_layer_elements_type[i]]).draw(App);
+			(*m_drawables[m_layer_elements_type[i]]).setSize(m_layer_elements[i][2], m_layer_elements[i][3]);
 		}
 	}
 }

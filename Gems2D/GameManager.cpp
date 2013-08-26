@@ -61,6 +61,7 @@ void GameManager::run(sf::RenderWindow& App) {
 			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Tab)) m_levels[m_actualLevel].eventHandler(FULLSCREEN);
 
 			// Joystick Events. Here we have to include a catcher for every button we want to use from the joystick.
+
 			if(sf::Joystick::isConnected(0)) {
 				if(sf::Joystick::isButtonPressed(0,0))m_levels[m_actualLevel].eventHandler(ACTION_JUMP);
 				if(sf::Joystick::isButtonPressed(0,1))m_levels[m_actualLevel].eventHandler(MAGIC_1);

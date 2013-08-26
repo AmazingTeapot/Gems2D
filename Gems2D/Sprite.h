@@ -98,7 +98,6 @@ public:
     int m_ysize;
     int m_xelements;
     int m_yelements;
-    int m_position;
 	int m_imageSize_x;
 	int m_imageSize_y;
 	int m_anchor_x;

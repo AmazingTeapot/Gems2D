@@ -43,6 +43,12 @@
     <Filter Include="Source Files\Resources">
       <UniqueIdentifier>{e1d7efa8-22ac-443d-960f-728f7e34f890}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Box2D Utilities">
+      <UniqueIdentifier>{b75793d4-a210-4254-911c-346282142b34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Box2D Utilities">
+      <UniqueIdentifier>{69dbb9c7-4fb7-4404-b876-40f70f2e7845}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -102,6 +108,9 @@
     <ClInclude Include="Constants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MyContactListener.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -155,16 +164,13 @@
     <ClCompile Include="Gems2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MyContactListener.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\Images\front.png">
       <Filter>Resource Files</Filter>
     </Image>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
-    <None Include="ClassDiagram3.cd" />
   </ItemGroup>
 </Project>

@@ -41,11 +41,12 @@ class StaticElementsLayer : public Layer {
 	virtual void draw (sf::RenderWindow& App);
 	
 	private:
-	vector<Sprite> m_drawables;
+	map<string, Sprite*> m_drawables;
 	int m_elements;
 	int m_diff_resources;
 	string m_level_folder;
 	vector<vector <int>> m_layer_elements;
+	vector<string> m_layer_elements_type;
 	bool isDrawable(vector<int> element, vector<int> drawableArea);
 
 };

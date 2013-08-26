@@ -5,6 +5,11 @@
 const string IMAGE_PATH = "./Resources/Graphics/";
 const string IMAGE_EXTENSION = ".png";
 
+const string MOVING_IMAGE_LAYER_PATH = "/Backgrounds/";
+const string STATIC_ELEMENTS_LAYER_PATH = "/Sprites/";
+const string STATIC_GRID_LAYER_PATH = "/Tilesets/";
+const string ANIMATED_ELEMENTS_LAYER_PATH = "/AnimatedSprites/";
+
 const string MUSIC_PATH = "./Resources/Audio/Music/";
 const string MUSIC_EXTENSION = ".ogg";
 
@@ -16,7 +21,8 @@ const string FONT_EXTENSION = ".ttf";
 
 const string LEVEL_PATH = "./Resources/Levels/";
 const string LEVEL_EXTENSION = ".txt";
-const string LEVEL_CONFIGS = "./Resources/Levels/Config/";
+
+const string LEVEL_CONFIGS = "/config";
 
 const string ANIMATION_PATH = "./Resources/Graphics/AnimatedSprites/";
 
@@ -56,5 +62,5 @@ const int WINDOW_SIZE_X = 800;
 const int WINDOW_SIZE_Y = 600;
 
 /* Default Animation Speed, measured in Steps Per Second */
-const float DEFAULT_ANIM_SPEED = 2; 
+const float DEFAULT_ANIM_SPEED = 5; 
 
