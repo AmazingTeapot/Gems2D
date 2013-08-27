@@ -3,9 +3,6 @@ Gems2D
 
 An engine for 2D games based on SFML
 
-
-Version History:
-
 Version History:
 
 v0.0.1 ~ v0.9.0: Unfortunately there are no documentation about the first steps of the engine. Trough this first steps some basic functionalities were implemented: Definition, integration with SFML, layer types creation, resource handlers, wrappings, animation handlers, external events, camera, etc...
