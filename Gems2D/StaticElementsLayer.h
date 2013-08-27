@@ -40,7 +40,9 @@ class StaticElementsLayer : public Layer {
 	   different elements that can be drawn on the scene. */
 	virtual void draw (sf::RenderWindow& App);
 	
-	private:
+	virtual void superDraw (sf::RenderWindow& App, vector<int> toDraw);
+
+private:
 	map<string, Sprite*> m_drawables;
 	int m_elements;
 	int m_diff_resources;

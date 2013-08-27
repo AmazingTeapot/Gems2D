@@ -21,5 +21,7 @@ class Layer {
 	/* Draws the layer on the window. Concretely, draws the subrectangle of the layer visible by the player on the window. */
 	virtual void draw(sf::RenderWindow& App) = 0;
 
+	virtual void superDraw(sf::RenderWindow& App, vector<int> toDraw) = 0;
+
 };
 

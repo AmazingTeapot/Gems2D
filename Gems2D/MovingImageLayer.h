@@ -42,6 +42,7 @@ class MovingImageLayer : public Layer {
 
 	/* Draws the layer on the window. Concretely, draws the subrectangle of the image visible by the player on the window. */
 	virtual void draw (sf::RenderWindow& App);
+	virtual void superDraw (sf::RenderWindow& App, vector<int> toDraw);
 
 
 	private:

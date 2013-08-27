@@ -35,7 +35,8 @@ void StaticElementsLayer::setLayer (string path) {
 			if(level.good()) {
 				level >> m_layer_elements[i][0] >> m_layer_elements[i][1] >> m_layer_elements[i][2] 
 				>> m_layer_elements[i][3] >> m_layer_elements_type[i]; 
-
+				m_layer_elements[i][0] += 255;
+				m_layer_elements[i][1] += 88;
 			}
 		}
 	}
@@ -58,6 +59,22 @@ void StaticElementsLayer::draw (sf::RenderWindow& App) {
 			(*m_drawables[m_layer_elements_type[i]]).setSize(m_layer_elements[i][2], m_layer_elements[i][3]);
 			(*m_drawables[m_layer_elements_type[i]]).draw(App);
 			(*m_drawables[m_layer_elements_type[i]]).setSize(m_layer_elements[i][2], m_layer_elements[i][3]);
+		}
+	}
+}
+
+void StaticElementsLayer::superDraw (sf::RenderWindow& App, vector<int> toDraw) {
+	vector<int> drawableArea;
+	Camera::getInstance()->getDrawableArea(drawableArea);
+	int window_size_x = Camera::getInstance()->getWindowSize().first;
+	int window_size_y = Camera::getInstance()->getWindowSize().second;
+	for(int i = 0; i < toDraw.size(); ++i) { 
+		if (isDrawable(m_layer_elements[toDraw[i]], drawableArea))	{
+			(*m_drawables[m_layer_elements_type[toDraw[i]]]).setPos((float)m_layer_elements[toDraw[i]][0] - Camera::getInstance()->getObsPoint().first + Camera::getInstance()->getWindowSize().first/2, 
+				(float)m_layer_elements[toDraw[i]][1] - Camera::getInstance()->getObsPoint().second + Camera::getInstance()->getWindowSize().second/2);
+			(*m_drawables[m_layer_elements_type[toDraw[i]]]).setSize(m_layer_elements[toDraw[i]][2], m_layer_elements[toDraw[i]][3]);
+			(*m_drawables[m_layer_elements_type[toDraw[i]]]).draw(App);
+			(*m_drawables[m_layer_elements_type[toDraw[i]]]).setSize(m_layer_elements[toDraw[i]][2], m_layer_elements[toDraw[i]][3]);
 		}
 	}
 }

@@ -61,6 +61,8 @@ void AnimatedElementsLayer::draw (sf::RenderWindow& App) {
 	}
 }
 
+void AnimatedElementsLayer::superDraw (sf::RenderWindow& App, vector<int> toDraw) { }
+
 bool AnimatedElementsLayer::isDrawable(AnimatedSprite anim, vector<int> drawableArea) {
 	int anim_x = anim.getPosition().first;	
 	int anim_y = anim.getPosition().second;

@@ -9,3 +9,6 @@ v1.0.1: Clean-up, Screen Delimitation and Anchor Points (14/2/2013): All the cod
 v1.0.2: Still Cleaning and Formatting (29/3/2013): Now all the code is commented using the same format rules. The functions are explained, and everything is documented.
 
 v1.1.0: DeltaTime and Updates (15/04/2013): Added the concept of deltaTime: Now all the movement in the game is defined by the time passed between each iteration of the gameLoop (and not set by a fixed constant). With this, we can assure that all the movement is done at a constant speed, no matter how the performance of the PC goes. The same goes for the step time of the animations.
+
+v1.2.0: Game Testing (06/04/2013 - 27/08/2013): The engine was used for the first time to make a full game. This game is "Game&Bud", developed in a one night stand, and the results were sucessful. The game was made in a separate repository and during the developement a few more features were added, and some bugs were fixed (06/04/2013). This features were merged and polished on the engine on 27/08/2013.
+A few attempts to work with physics have been made. We are trying to integrate Box2D, a physics library. The first tests are positive, but by now this branch of the project is paused.

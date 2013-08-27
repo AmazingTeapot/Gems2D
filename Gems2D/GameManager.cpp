@@ -2,8 +2,13 @@
 #include "GameManager.h"
 #include <fstream>
 #include <iostream>
-
-GameManager::GameManager() { }
+#include <Windows.h>
+GameManager::GameManager() { 
+	up_pressed = false;
+	down_pressed = false;
+	left_pressed = false;
+	right_pressed = false;
+}
 
 GameManager::~GameManager(void) { }
 
@@ -24,6 +29,15 @@ void GameManager::start() {
 		}
 	}
 	m_actualLevel = 0;
+
+// DA MUSIC GOES HERE, PERO NO VA =D 
+	/*	sf::Music Music1;        
+	if (!Music1.openFromFile("/Resources/song.ogg"))
+{
+cout << "derp" ;
+	}
+	Music1.play();
+*/
 }
 
 void GameManager::run(sf::RenderWindow& App) {
@@ -34,35 +48,29 @@ void GameManager::run(sf::RenderWindow& App) {
 		float deltaTime = c.getElapsedTime().asSeconds();
 		c.restart();
 
-		/*	if (App.pollEvent(Evento)) {	
+			if (App.pollEvent(Evento)) {	
 
 			// Closing the Window
 			if(Evento.type == sf::Event::Closed) {
 			   App.close();
 			}
-			*/
-			// Keyboard Events. Here we have to include a catcher for every key we want to use in the game.
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) m_levels[m_actualLevel].eventHandler(LEFT);
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) m_levels[m_actualLevel].eventHandler(DOWN);
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) m_levels[m_actualLevel].eventHandler(UP);
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) m_levels[m_actualLevel].eventHandler(RIGHT);
-
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z)) m_levels[m_actualLevel].eventHandler(ACTION_RUN);
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::X)) m_levels[m_actualLevel].eventHandler(ACTION_JUMP);
 			
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::C)) m_levels[m_actualLevel].eventHandler(ATTACK_1);
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::V)) m_levels[m_actualLevel].eventHandler(ATTACK_2);
+			// Keyboard Events. Here we have to include a catcher for every key we want to use in the game.
 
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)) m_levels[m_actualLevel].eventHandler(MAGIC_1);
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::S)) m_levels[m_actualLevel].eventHandler(MAGIC_2);
-
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return)) m_levels[m_actualLevel].eventHandler(PAUSE);
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) m_levels[m_actualLevel].eventHandler(QUIT);
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Tab)) m_levels[m_actualLevel].eventHandler(FULLSCREEN);
+			if ((Evento.type == sf::Event::KeyPressed) && (Evento.key.code == sf::Keyboard::Up)) m_levels[m_actualLevel].eventHandler(UP);
+			if ((Evento.type == sf::Event::KeyPressed) && (Evento.key.code == sf::Keyboard::Down)) m_levels[m_actualLevel].eventHandler(DOWN);
+			if ((Evento.type == sf::Event::KeyPressed) && (Evento.key.code == sf::Keyboard::Left)) m_levels[m_actualLevel].eventHandler(LEFT);
+			if ((Evento.type == sf::Event::KeyPressed) && (Evento.key.code == sf::Keyboard::Right)) m_levels[m_actualLevel].eventHandler(RIGHT);
+			if ((Evento.type == sf::Event::KeyPressed) && (Evento.key.code == sf::Keyboard::Return)) m_levels[m_actualLevel].eventHandler(PAUSE);
+			if ((Evento.type == sf::Event::KeyPressed) && (Evento.key.code == sf::Keyboard::Back)) m_levels[m_actualLevel].eventHandler(SELECT);
+			}
+   
 
 			// Joystick Events. Here we have to include a catcher for every button we want to use from the joystick.
 
-			if(sf::Joystick::isConnected(0)) {
+			// TO - DO
+
+			/*if(sf::Joystick::isConnected(0)) {
 				if(sf::Joystick::isButtonPressed(0,0))m_levels[m_actualLevel].eventHandler(ACTION_JUMP);
 				if(sf::Joystick::isButtonPressed(0,1))m_levels[m_actualLevel].eventHandler(MAGIC_1);
 				if(sf::Joystick::isButtonPressed(0,3))m_levels[m_actualLevel].eventHandler(ATTACK_2);
@@ -74,7 +82,7 @@ void GameManager::run(sf::RenderWindow& App) {
 				if(sf::Joystick::getAxisPosition(0,sf::Joystick::X) > 10) m_levels[m_actualLevel].eventHandler(RIGHT);
 				if(sf::Joystick::getAxisPosition(0,sf::Joystick::X) < 10) m_levels[m_actualLevel].eventHandler(LEFT);
 				if(sf::Joystick::getAxisPosition(0,sf::Joystick::PovX) > 10) m_levels[m_actualLevel].eventHandler(ACTION_RUN);
-			}
+			}*/
 		
 		/* Get Level Status*/
 

@@ -38,5 +38,8 @@ class GameManager {
 	GameManager();
 	GameManager(GameManager* const&);
 	void operator=(GameManager* const&);
-
+	bool up_pressed;
+	bool down_pressed;
+	bool left_pressed;
+	bool right_pressed;
 };

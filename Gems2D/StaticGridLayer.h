@@ -42,6 +42,7 @@ class StaticGridLayer : public Layer {
 
 	/* Draws the layer on the window. Concretely, draws the tiles visible by the player on the window. */
 	virtual void draw (sf::RenderWindow& App);
+	virtual void superDraw (sf::RenderWindow& App, vector<int> toDraw);
 
 	private:
 	Tileset m_tileset;

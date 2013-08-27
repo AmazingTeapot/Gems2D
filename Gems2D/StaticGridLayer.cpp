@@ -74,3 +74,5 @@ void StaticGridLayer::draw(sf::RenderWindow& App) {
 		}
 	}
 }
+
+void StaticGridLayer::superDraw (sf::RenderWindow& App, vector<int> toDraw) { }

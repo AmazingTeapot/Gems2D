@@ -31,10 +31,14 @@ void MovingImageLayer::setLayer (string path) {
 }
 
 void MovingImageLayer::update (float deltaTime) {
-	int x_position=(double)((double)(Camera::getInstance()->getObsPoint().first-m_window_size_x/2)/(double)(m_scene_size_x-m_window_size_x))*(double)(m_image_size_x-m_window_size_x);
-	int y_position=(double)((double)(Camera::getInstance()->getObsPoint().second-m_window_size_y/2)/(double)(m_scene_size_y-m_window_size_y))*(double)(m_image_size_y-m_window_size_y);
-	m_background.setPos(-x_position, -y_position);
+//	int x_position=(double)((double)(Camera::getInstance()->getObsPoint().first-m_window_size_x/2)/(double)(m_scene_size_x-m_window_size_x))*(double)(m_image_size_x-m_window_size_x);
+//	int y_position=(double)((double)(Camera::getInstance()->getObsPoint().second-m_window_size_y/2)/(double)(m_scene_size_y-m_window_size_y))*(double)(m_image_size_y-m_window_size_y);
+//	m_background.setPos(-x_position, -y_position);
 }
 void MovingImageLayer::draw (sf::RenderWindow& App) {
+	m_background.draw(App);
+}
+
+void MovingImageLayer::superDraw (sf::RenderWindow& App, vector<int> toDraw) { 
 	m_background.draw(App);
 }

@@ -52,7 +52,10 @@ class Camera {
 	   (25% of the screen, in future updates this value will be able to change) the observer moves on. */
 	void updateCameraPos (int player_x, int player_y);
 
+	/* Physics function. Do not use this. */
 	void setSteps(int i);
+
+	/* Physics function. Do not use this. */
 	int getSteps();
 
 	private:
