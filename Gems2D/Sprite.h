@@ -90,7 +90,6 @@ public:
     /* Tells if the sprite has been clicked */
     bool isPressed(float x, float y);
 
-
 	protected:
     float m_xpos;
     float m_ypos;

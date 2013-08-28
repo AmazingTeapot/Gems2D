@@ -42,6 +42,9 @@ class MovingImageLayer : public Layer {
 
 	/* Draws the layer on the window. Concretely, draws the subrectangle of the image visible by the player on the window. */
 	virtual void draw (sf::RenderWindow& App);
+	
+	/* This method is used to write only some of the layers. It is used situationally, but I have to polish it. It was useful during
+	   the Game&Bud development phase. */
 	virtual void superDraw (sf::RenderWindow& App, vector<int> toDraw);
 
 

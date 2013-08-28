@@ -65,3 +65,4 @@ class ResourceManager {
 	ResourceManager(ResourceManager* const&);
 	void operator=(ResourceManager* const&);
 };
+
