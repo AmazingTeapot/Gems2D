@@ -1,5 +1,0 @@
-4
-0 grass
-1 tileset 16 16
-2 
-3

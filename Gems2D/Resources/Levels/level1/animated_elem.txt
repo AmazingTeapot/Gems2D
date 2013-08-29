@@ -1,2 +1,0 @@
-1
-1 mario AnimatedSprites/world1 100 200
