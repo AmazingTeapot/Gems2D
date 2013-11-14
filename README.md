@@ -19,6 +19,8 @@ Almost all the functions are well-documented, so it shouldn't be hard to use.
 
 I hope you find this useful, and don't forget to check for new versions, since this is unfinished.
 
+Notice that some features are still inclomplete (i.e: I'm loading sounds directly using SFML classes). I'm working on all of this.
+
 Next Goals:
 
 * Make the physics module a solid module.
