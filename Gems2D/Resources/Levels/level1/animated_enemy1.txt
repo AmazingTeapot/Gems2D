@@ -1,0 +1,20 @@
+12
+1 enemy1 1 AnimatedSprites/world1 640 384 640 896
+1 enemy1 1 AnimatedSprites/world1 1792 640 1792 2304
+1 enemy1 1 AnimatedSprites/world1 128 640 128 1280
+1 enemy1 1 AnimatedSprites/world1 2688 384 2688 3584
+1 enemy1 1 AnimatedSprites/world1 640 1344 640 1152
+1 enemy1 1 AnimatedSprites/world1 3840 1344 3200 3840
+1 enemy1 1 AnimatedSprites/world1 3840 1344 3200 3840
+1 enemy1 1 AnimatedSprites/world1 1536 1088 1536 2560
+1 enemy3 3 AnimatedSprites/world1 2752 708 2368 2752
+1 enemy3 3 AnimatedSprites/world1 3712 710 3200 3712
+1 enemy3 3 AnimatedSprites/world1 2176 1420 1536 2176
+1 enemy3 3 AnimatedSprites/world1 3712 1158 3328 3712
+
+
+
+
+
+
+

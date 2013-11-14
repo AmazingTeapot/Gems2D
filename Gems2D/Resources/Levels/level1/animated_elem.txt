@@ -1,0 +1,2 @@
+1
+1 simonbelmont AnimatedSprites/world1 100 200

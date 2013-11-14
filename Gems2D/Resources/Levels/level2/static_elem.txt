@@ -1,0 +1,78 @@
+level1 36 29
+
+whip_right_stand_1
+whip_right_stand_2
+whip_right_stand_3
+whip_left_stand_1
+whip_left_stand_2
+whip_left_stand_3
+whip_right_crouch_1
+whip_right_crouch_2
+whip_right_crouch_3
+whip_left_crouch_1
+whip_left_crouch_2
+whip_left_crouch_3
+breakable_wall
+key
+door
+workshop
+noblueprint
+blueprint1
+blueprint2
+blueprint3
+arrow
+material1
+material2
+material3
+material4
+material5
+material6
+blueprint
+gameover
+
+0 0 64 128 whip_right_stand_1
+0 0 64 128 whip_right_stand_2
+0 0 100 128 whip_right_stand_3
+
+0 0 64 128 whip_left_stand_1
+0 0 64 128 whip_left_stand_2
+0 0 100 128 whip_left_stand_3
+
+0 0 64 128 whip_right_crouch_1
+0 0 64 128 whip_right_crouch_2
+0 0 100 128 whip_right_crouch_3
+
+0 0 64 128 whip_left_crouch_1
+0 0 64 128 whip_left_crouch_2
+0 0 100 128 whip_left_crouch_3
+
+768 1216 128 128 breakable_wall
+782 1280 64 64 key
+1952 768 64 192 door
+
+100 40 600 600 workshop
+160 200 481 78 noblueprint
+160 320 481 78 noblueprint
+160 440 481 78 noblueprint
+
+160 200 481 78 blueprint1
+160 320 481 78 blueprint2
+160 440 481 78 blueprint3
+
+130 229 16 16 arrow
+130 349 16 16 arrow
+130 469 16 16 arrow
+500 600 16 16 arrow
+
+100 40 64 64 material1
+100 40 64 64 material2
+100 40 64 64 material3
+100 40 64 64 material4
+100 40 64 64 material5
+100 40 64 64 material6
+
+-150 192 64 64 blueprint
+1300 1280 64 64 blueprint
+100 192 64 64 blueprint
+
+0 0 1366 768 gameover

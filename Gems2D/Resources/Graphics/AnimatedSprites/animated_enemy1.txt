@@ -1,0 +1,3 @@
+2
+1 enemy1 AnimatedSprites/world1 640 256 640 960
+1 enemy1 AnimatedSprites/world1 1792 512 1792 2304

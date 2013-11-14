@@ -1,0 +1,38 @@
+level1 21 13
+hud
+clau
+item1
+item2
+item3
+material1
+material2
+material3
+material4
+material5
+material6
+heart
+halfheart
+
+0 0 1366 128 hud
+368 40 64 64 clau
+997 44 64 64 item1
+1115 46 64 64 item2
+1233 44 64 64 item3
+
+514 44 64 64 material1
+582 44 64 64 material2
+651 44 64 64 material3
+719 44 64 64 material4
+797 44 64 64 material5
+864 44 64 64 material6
+
+24 50 23 40 halfheart
+24 50 46 40 heart
+84 50 23 40 halfheart
+84 50 46 40 heart
+143 50 23 40 halfheart
+143 50 46 40 heart
+195 50 23 40 halfheart
+195 50 46 40 heart
+248 50 23 40 halfheart
+248 50 46 40 heart

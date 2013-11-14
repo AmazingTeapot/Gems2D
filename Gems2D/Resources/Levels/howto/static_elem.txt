@@ -1,0 +1,33 @@
+howto 15 15
+
+portada
+controlkeyboard
+controlxbox
+slide1
+slide2
+slide3
+slide4
+slide5
+slide6
+slide7
+slide8
+slide9
+slide10
+slide11
+victory
+
+0 0 1366 768 portada
+0 0 1366 768 controlkeyboard
+0 0 1366 768 controlxbox
+0 0 1366 768 slide1
+0 0 1366 768 slide2
+0 0 1366 768 slide3
+0 0 1366 768 slide4
+0 0 1366 768 slide5
+0 0 1366 768 slide6
+0 0 1366 768 slide7
+0 0 1366 768 slide8
+0 0 1366 768 slide9
+0 0 1366 768 slide10
+0 0 1366 768 slide11
+0 0 1366 768 victory
